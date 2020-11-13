@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <banner />
     <about-me></about-me>
     <portfolio></portfolio>
     <skill />
@@ -11,6 +12,7 @@
 export default {
   name: 'Main',
   components: {
+    Banner: () => import('@/components/main/Banner.vue'),
     AboutMe: () => import('@/components/main/AboutMe.vue'),
     Portfolio: () => import('@/components/main/Portfolio.vue'),
     Skill: () => import('@/components/main/Skill.vue'),
@@ -19,4 +21,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main {
+  height: 100vh;
+}
+</style>

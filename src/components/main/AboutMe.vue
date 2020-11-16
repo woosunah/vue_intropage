@@ -41,14 +41,14 @@ export default {};
   margin: 50px;
   width: 300px;
   height: 400px;
-  background-color: rgb(238, 238, 157);
+  background-color: #ccc;
   display: inline-block;
 }
 .box4 {
   margin: 50px;
   width: 300px;
   height: 400px;
-  background-color: rgb(83, 175, 147);
+  background-color: #333;
   display: inline-block;
 }
 </style>

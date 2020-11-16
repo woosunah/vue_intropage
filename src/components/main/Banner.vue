@@ -10,7 +10,14 @@
 export default {
   name: 'Banner',
   data() {
-    return { timing: 0, last_known_scroll_position: 0, ticking: false };
+    return {
+      timing: 0,
+      timing2: 0,
+      timing3: 0,
+      last_known_scroll_position: 0,
+      ticking: false,
+      currentY: 0,
+    };
   },
   mounted() {
     document.body.addEventListener('onload', this.draw());
@@ -41,17 +48,40 @@ export default {
         }
         let ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, 1920, 500); // 캔버스를 비운다
-        this.timing = this.timing - 0.3;
-
-        this.sinCurv(ctx, this.timing, 'rgba(255,255,255)', 20, 70, 20);
-        this.sinCurv(ctx, this.timing, 'rgba(107,183,194)', 25, 60, 30);
-        this.sinCurv(ctx, this.timing, 'rgba(40,132,145)', 50, 55, 50);
+        this.timing = this.timing - 0.1;
+        this.timing2 = this.timing2 - 0.15;
+        this.timing3 = this.timing3 - 0.2;
+        this.sinCurv(
+          ctx,
+          this.timing,
+          'rgba(255,255,255,0.8)',
+          75,
+          13,
+          -1 * this.currentY * 0.5
+        );
+        this.sinCurv(
+          ctx,
+          this.timing2,
+          'rgba(107,183,194,0.8)',
+          70,
+          15,
+          30 - this.currentY * 0.8
+        );
+        this.sinCurv(
+          ctx,
+          this.timing3,
+          'rgba(40,132,145,0.8)',
+          65,
+          20,
+          60 - this.currentY
+        );
 
         window.requestAnimationFrame(this.draw);
       }
     },
     scrolling(y) {
       console.log('scroll', y);
+      this.currentY = y;
     },
 
     sinCurv(ctx, rad, color, length, amp, y = 0) {
@@ -59,7 +89,7 @@ export default {
       curv.moveTo(0, 200 + y);
       let prevX = 0;
       let prevY = 200 + y;
-      for (let i = -3; i < 1000; i++) {
+      for (let i = -1; i < 1000; i++) {
         let curX = 10 * i;
         let curY =
           Math.sin((Math.PI / length) * i + (Math.PI / 18) * rad) * amp +

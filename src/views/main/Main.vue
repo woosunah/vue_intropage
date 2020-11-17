@@ -1,10 +1,10 @@
 <template>
   <div class="main">
-    <banner />
+    <banner ref="bannerEl"></banner>
     <about-me></about-me>
-    <portfolio></portfolio>
-    <skill />
-    <contact />
+    <portfolio ref="portfolioEl"></portfolio>
+    <skill></skill>
+    <contact></contact>
   </div>
 </template>
 
@@ -18,11 +18,23 @@ export default {
     Skill: () => import('@/components/main/Skill.vue'),
     Contact: () => import('@/components/main/Contact.vue'),
   },
+  mounted() {
+    document.querySelector('#core-view').addEventListener('scroll', (e) => {
+      console.log('scrolltop: ', e.target.scrollTop);
+      let scrollTop = e.target.scrollTop;
+      this.$refs.bannerEl.scrollParallax(scrollTop);
+      this.$refs.portfolioEl.scrollCallbackElAppear(scrollTop);
+    });
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .main {
   min-height: 100vh;
+}
+h1 {
+  text-align: center;
+  padding-top: 100px;
 }
 </style>

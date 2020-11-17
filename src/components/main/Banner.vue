@@ -14,6 +14,7 @@ export default {
       timing: 0,
       timing2: 0,
       timing3: 0,
+      timing4: 0,
       last_known_scroll_position: 0,
       ticking: false,
       currentY: 0,
@@ -21,21 +22,21 @@ export default {
   },
   mounted() {
     document.body.addEventListener('onload', this.draw());
-    document.addEventListener('scroll', () => {
-      this.last_known_scroll_position = window.scrollY;
+  },
+
+  methods: {
+    scrollParallax(scrollTop) {
+      this.last_known_scroll_position = scrollTop;
 
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
-          this.scrolling(this.last_known_scroll_position);
+          this.currentY = this.last_known_scroll_position;
           this.ticking = false;
         });
 
         this.ticking = true;
       }
-    });
-  },
-
-  methods: {
+    },
     init() {
       window.requestAnimationFrame(this.draw);
     },
@@ -51,6 +52,9 @@ export default {
         this.timing = this.timing - 0.1;
         this.timing2 = this.timing2 - 0.15;
         this.timing3 = this.timing3 - 0.2;
+        this.timing4 = this.timing4 - 0.2;
+
+        this.sinCurv(ctx, this.timing4, '#A0A603', 65, 20, 60 - this.currentY);
         this.sinCurv(
           ctx,
           this.timing,
@@ -78,10 +82,6 @@ export default {
 
         window.requestAnimationFrame(this.draw);
       }
-    },
-    scrolling(y) {
-      console.log('scroll', y);
-      this.currentY = y;
     },
 
     sinCurv(ctx, rad, color, length, amp, y = 0) {

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="home">
     <core-app-bar />
     <core-navigator />
     <core-view />
@@ -22,6 +22,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+#home {
 }
 </style>

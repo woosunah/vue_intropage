@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio" ref="portfolio">
+  <div id="portfolio" ref="portfolio">
     <h1>#02 PORTFOLIO</h1>
     <div class="box-container">
       <transition-group name="list">
@@ -71,7 +71,7 @@ export default {
   opacity: 0;
   transform: scale(0);
 }
-.portfolio {
+#portfolio {
   background-color: #ccc;
   height: 100vh;
 }

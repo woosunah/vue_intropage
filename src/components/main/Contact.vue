@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div id="contact">
     <h1>#04 CONTACT</h1>
     <div class="form">
       <v-text-field
@@ -15,34 +15,82 @@
         v-model="email"
       ></v-text-field>
       <v-text-field
-        label="Phone"
+        label="subject"
         dark
         class="contact-text-field"
         v-model="subject"
       ></v-text-field>
       <v-textarea dark label="Message" v-model="message"></v-textarea>
       <v-row justify="center"
-        ><v-btn block color="#ccc" @click="requestSendEmail">
-          submit</v-btn
-        ></v-row
+        ><v-btn block color="#fff" @click="sendEmail"> submit</v-btn></v-row
       >
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import axios from 'axios';
+import sendGrid from '@/config/sendGrid.json';
+export default {
+  data() {
+    return {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    };
+  },
+  methods: {
+    sendEmail() {
+      const options = {
+        method: 'POST',
+        url: 'https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send',
+        headers: {
+          'content-type': 'application/json',
+          'x-rapidapi-key': sendGrid.key,
+          'x-rapidapi-host': 'rapidprod-sendgrid-v1.p.rapidapi.com',
+        },
+        data: {
+          personalizations: [
+            { to: [{ email: 'sunah5011@gmail.com' }], subject: this.subject },
+          ],
+          from: { email: this.email },
+          content: [
+            {
+              type: 'text/plain',
+              value:
+                '안녕하세요 제 이름은' + this.name + '입니다.' + this.message,
+            },
+          ],
+        },
+      };
+
+      axios
+        .request(options)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.contact {
+#contact {
   background-image: url('https://picsum.photos/1920/1080?random');
   height: 100vh;
 }
 .form {
-  margin: 50px auto;
+  margin: 70px auto;
   width: 800px;
-  background-color: rgba(63, 60, 60, 0.9);
-  padding: 30px;
+  background-color: rgba(63, 60, 60, 0.7);
+  padding: 40px;
+}
+
+h1 {
+  margin-right: 30px;
 }
 </style>

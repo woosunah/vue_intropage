@@ -8,57 +8,14 @@
       height="100vh"
     >
       <v-list nav dense>
-        <v-list-item-group active-class="#3b92bb-text text--accent-4">
-          <v-list-item class="my-30">
+        <v-list-item-group class="list-wrap">
+          <v-list-item v-for="(item, i) in items" :key="i" :href="item.href">
             <v-list-item-icon>
-              <v-icon style="padding:20px">mdi-home</v-icon>
+              <v-icon class="list-icon">{{ item.icon }}</v-icon>
             </v-list-item-icon>
-            <v-list-item-title
-              style="font-weight:bold;font-size:24px;padding:20px;"
-              >Home</v-list-item-title
-            >
-          </v-list-item>
-
-          <v-list-item class="my-30">
-            <v-list-item-icon>
-              <v-icon style="padding:20px">mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title
-              style="font-weight:bold;font-size:24px;padding:20px"
-              >About</v-list-item-title
-            >
-          </v-list-item>
-
-          <v-list-item class="my-30">
-            <v-list-item-icon>
-              <v-icon style="padding:20px"
-                >mdi-file-document-edit-outline</v-icon
-              >
-            </v-list-item-icon>
-            <v-list-item-title
-              style="font-weight:bold;font-size:24px;padding:20px"
-              >Portfolio</v-list-item-title
-            >
-          </v-list-item>
-
-          <v-list-item class="my-30">
-            <v-list-item-icon>
-              <v-icon style="padding:20px">mdi-head-lightbulb-outline</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title
-              style="font-weight:bold;font-size:24px;padding:20px"
-              >Skill</v-list-item-title
-            >
-          </v-list-item>
-          <v-list-item class="my-30">
-            <v-list-item-icon>
-              <v-icon style="padding:20px">mdi-phone</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title
-              class="list-title"
-              style="font-weight:bold;font-size:24px;padding:20px"
-              >Contact</v-list-item-title
-            >
+            <v-list-item-title class="list-title">{{
+              item.title
+            }}</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -73,6 +30,17 @@ export default {
   data() {
     return {
       naviWidth: 400,
+      items: [
+        { href: '#banner', icon: 'mdi-home', title: 'Home' },
+        { href: '#about', icon: 'mdi-account', title: 'About' },
+        {
+          href: '#portfolio',
+          icon: 'mdi-file-document-edit-outline',
+          title: 'Portfolio',
+        },
+        { href: '#skill', icon: 'mdi-head-lightbulb-outline', title: 'Skill' },
+        { href: '#contact', icon: 'mdi-phone', title: 'Contact' },
+      ],
     };
   },
   computed: {
@@ -87,13 +55,28 @@ export default {
     },
   },
   mounted() {
-    this.naviWidth = window.innerWidth / 2.5;
+    this.naviWidth = window.innerWidth / 3;
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.my-30 {
-  margin: 100px 80px;
+.list-wrap {
+  margin-top: 100px;
+  padding: 40px;
+}
+.nav .list-title {
+  font-weight: bold;
+  font-size: 40px;
+  padding: 40px;
+}
+.nav .list-title:hover {
+  color: rgb(40, 132, 145);
+}
+.list-icon {
+  padding: 40px;
+}
+a {
+  text-decoration: none;
 }
 </style>

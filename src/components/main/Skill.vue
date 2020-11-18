@@ -1,5 +1,5 @@
 <template>
-  <div class="skill">
+  <div id="skill">
     <h1>#03 SKILL</h1>
   </div>
 </template>
@@ -9,7 +9,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.skill {
+#skill {
   height: 100vh;
   background-color: #eee;
 }

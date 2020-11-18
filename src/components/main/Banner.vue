@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <div id="banner">
     <canvas id="wave" width="1920" height="500">
       this is canvas
     </canvas>
@@ -117,7 +117,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.banner {
+#banner {
   // background-image: url('https://picsum.photos/1920/1080?random');
   // background: url('../../assets/sea.jpg') no-repeat;
   // background-size: contain;

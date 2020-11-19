@@ -3,12 +3,7 @@
     <h1>#02 PORTFOLIO</h1>
     <div class="box-container">
       <transition-group name="list">
-        <div
-          class="box1"
-          v-for="(box, i) in boxs"
-          :key="i"
-          v-show="i < timeing"
-        >
+        <div class="box1" v-for="(box, i) in boxs" :key="i" v-show="i < timing">
           <img
             :src="box.imgSrc"
             class="portfolio-img"
@@ -24,7 +19,7 @@
 export default {
   data() {
     return {
-      timeing: 0,
+      timing: 0,
       isElAppear: false,
       boxs: [
         {
@@ -45,12 +40,13 @@ export default {
   methods: {
     scrollCallbackElAppear(scrollTop) {
       if (this.$refs.portfolio.offsetTop < scrollTop && !this.isElAppear) {
+        console.log('appear');
         this.isElAppear = true;
         let interval = setInterval(() => {
-          if (this.timeing > this.boxs.length) {
+          if (this.timing > this.boxs.length) {
             clearInterval(interval);
           }
-          this.timeing++;
+          this.timing++;
         }, 200);
       }
     },
@@ -72,7 +68,7 @@ export default {
   transform: scale(0);
 }
 #portfolio {
-  background-color: #ccc;
+  background-color: #bfdcd8;
   height: 100vh;
 }
 .box-container {
@@ -92,17 +88,5 @@ export default {
   width: 300px;
   height: 300px;
   margin-right: 40px;
-}
-.box1 {
-  background-color: #aaa;
-}
-.box2 {
-  background-color: #333;
-}
-.box3 {
-  background-color: #aaa;
-}
-.box4 {
-  background-color: #333;
 }
 </style>

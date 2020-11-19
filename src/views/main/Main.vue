@@ -3,7 +3,7 @@
     <banner ref="bannerEl"></banner>
     <about-me></about-me>
     <portfolio ref="portfolioEl"></portfolio>
-    <skill></skill>
+    <skill ref="skillEl"></skill>
     <contact></contact>
   </div>
 </template>
@@ -24,6 +24,7 @@ export default {
       let scrollTop = e.target.scrollTop;
       this.$refs.bannerEl.scrollParallax(scrollTop);
       this.$refs.portfolioEl.scrollCallbackElAppear(scrollTop);
+      this.$refs.skillEl.scrollCallbackProgressAnimationStart(scrollTop);
     });
   },
 };

@@ -1,17 +1,12 @@
 <template>
   <div id="portfolio" ref="portfolio">
     <h1>#02 PORTFOLIO</h1>
-    <div class="box-container">
-      <transition-group name="list">
-        <div class="box1" v-for="(box, i) in boxs" :key="i" v-show="i < timing">
-          <img
-            :src="box.imgSrc"
-            class="portfolio-img"
-            alt="포트폴리오 이미지"
-          />
-        </div>
-      </transition-group>
-    </div>
+
+    <transition-group name="list" tag="div" class="box-container">
+      <div class="box1" v-for="(box, i) in boxs" :key="i" v-show="i < timing">
+        <img :src="box.imgSrc" class="portfolio-img" alt="포트폴리오 이미지" />
+      </div>
+    </transition-group>
   </div>
 </template>
 
@@ -69,24 +64,41 @@ export default {
 }
 #portfolio {
   background-color: #bfdcd8;
-  height: 100vh;
+  padding: 100px 0;
+  h1 {
+    padding: 30px 0;
+  }
 }
 .box-container {
-  width: 1280px;
+  width: 50%; /*1280px*/
   // border: 1px solid #000;
-  span {
-    display: flex;
-    justify-content: flex-start;
-  }
-  margin: 130px auto 0;
-}
-.portfolio-img {
-  width: 300px;
-  height: 300px;
+  margin: 150px auto;
+  display: flex;
+  justify-content: center;
 }
 .box1 {
-  width: 300px;
-  height: 300px;
-  margin-right: 40px;
+  width: 260px;
+  margin: 0 20px 40px;
+}
+.portfolio-img {
+  width: 260px;
+  height: 260px;
+}
+
+@media only screen and(max-width:767px) {
+  .box-container {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    top: 60px;
+    left: 75px;
+  }
+  .box1 {
+    margin: 0 20px 40px;
+  }
+  .portfolio-img {
+    width: 260px;
+    height: 260px;
+  }
 }
 </style>

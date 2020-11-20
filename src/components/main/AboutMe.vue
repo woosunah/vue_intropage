@@ -81,4 +81,24 @@ export default {};
     }
   }
 }
+
+@media only screen and(max-width:767px) {
+  .circle {
+    margin-top: -90px;
+  }
+  .profile-wrap {
+    position: relative;
+    .profile {
+      position: absolute;
+      top: 450px;
+      left: 60px;
+    }
+    .education {
+      width: 400px;
+      position: absolute;
+      top: 450px;
+      left: 260px;
+    }
+  }
+}
 </style>

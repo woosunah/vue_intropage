@@ -1,10 +1,17 @@
 <template>
   <div id="skill" ref="skill">
     <h1>#03 SKILL</h1>
-    <div class="skill-icon-wrap">
-      <div v-for="(skill, i) in skills" :key="i" class="skill-icon-group">
+    <v-row class="skill-icon-wrap" no-gutters>
+      <v-col
+        cols="12"
+        lg="4"
+        md="6"
+        v-for="(skill, i) in skills"
+        :key="i"
+        class="skill-icon-group"
+      >
         <v-progress-circular
-          :rotate="360"
+          :rotate="-90"
           :size="200"
           :width="15"
           :value="isAnimationStart ? skill.value : 0"
@@ -13,8 +20,8 @@
           <p class="graph">{{ skill.value }}%</p>
         </v-progress-circular>
         <p class="skill-info" v-html="skill.text"></p>
-      </div>
-    </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -38,31 +45,34 @@ export default {
       }
     },
   },
+  mounted() {},
 };
 </script>
 
 <style lang="scss">
 #skill {
-  height: 100vh;
+  // height: 100vh;
   background-color: rgb(242, 243, 243);
+  h1 {
+    padding-top: 80px;
+    // border: 1px solid #000;
+  }
 }
 .skill-icon-wrap {
-  width: 1280px;
-  margin: 50px auto;
-  padding: 20px;
-  display: flex;
+  width: 66.66666666666667%; /*1280px;*/
+  margin: 20px auto 0;
+  padding: 40px 0;
   flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
 }
 .skill-icon-group {
-  width: 400px;
+  width: 31.25%; /*400px;*/
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-flow: column;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .skill-icon-wrap img {

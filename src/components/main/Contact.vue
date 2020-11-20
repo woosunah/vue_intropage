@@ -80,7 +80,11 @@ export default {
 
 <style lang="scss" scoped>
 #contact {
-  background-image: url('https://picsum.photos/1920/1080?random');
+  // background-image: url('https://picsum.photos/1920/1080?random');
+  background-image: url('../../assets/img/mint.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
 }
 .form {
@@ -92,5 +96,11 @@ export default {
 
 h1 {
   margin-right: 30px;
+}
+
+@media only screen and(max-width:767px) {
+  .form {
+    width: 400px;
+  }
 }
 </style>

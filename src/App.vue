@@ -17,5 +17,6 @@ export default {
 <style lang="scss">
 html {
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 </style>

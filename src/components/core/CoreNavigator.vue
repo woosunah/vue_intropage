@@ -19,6 +19,12 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
+
+      <div class="github">
+        <a href="https://github.com/woosunah">
+          <v-icon class="github-icon">mdi-github</v-icon>Github
+        </a>
+      </div>
     </v-navigation-drawer>
   </div>
 </template>
@@ -78,5 +84,20 @@ export default {
 }
 a {
   text-decoration: none;
+}
+.github {
+  padding: 80px 90px 20px;
+  font-weight: bold;
+  font-size: 40px;
+  .github-icon {
+    padding-right: 80px;
+  }
+}
+
+.github a {
+  color: rgba(0, 0, 0, 0.87);
+}
+.github a:hover {
+  color: rgb(40, 132, 145);
 }
 </style>

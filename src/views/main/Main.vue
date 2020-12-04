@@ -5,19 +5,6 @@
     <portfolio ref="portfolioEl"></portfolio>
     <skill ref="skillEl"></skill>
     <contact></contact>
-
-    <div id="top-btn">
-      <v-btn
-        class="ma-2"
-        dark
-        small
-        fab
-        color="rgba(107,183,194,0.8)"
-        @click="scrollToTop()"
-      >
-        <v-icon>mdi-arrow-up-drop-circle</v-icon>
-      </v-btn>
-    </div>
   </div>
 </template>
 
@@ -40,11 +27,6 @@ export default {
       this.$refs.skillEl.scrollCallbackProgressAnimationStart(scrollTop);
     });
   },
-  methods: {
-    scrollToTop() {
-      window.scrollTo(0, 0);
-    },
-  },
 };
 </script>
 
@@ -55,11 +37,5 @@ export default {
 h1 {
   text-align: center;
   padding-top: 100px;
-}
-#top-btn {
-  position: fixed;
-  bottom: 10px;
-  right: 30px;
-  z-index: 10;
 }
 </style>

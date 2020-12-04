@@ -15,7 +15,7 @@ export default new Vuex.Store({
       },
       {
         img: require('../assets/img/css_icon.png'),
-        value: '85',
+        value: '80',
         text: '웹 표준을 바탕으로<br> 꼼꼼한 시맨틱 마크업을 작성합니다. css',
         color: '#4CAF50',
       },

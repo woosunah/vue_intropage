@@ -1,6 +1,6 @@
 <template>
   <v-row class="footer" justify="center" align="center">
-    <p>Copyright &copy; Made by WOO SUN AH</p>
+    <p>COPYRIGHT &copy; WOO SUN AH All Rights Reserved.</p>
   </v-row>
 </template>
 
@@ -17,6 +17,7 @@ export default {};
   margin: 0px auto 10px;
   p {
     font-size: 14px;
+    letter-spacing: 1px;
   }
 }
 </style>

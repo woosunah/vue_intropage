@@ -4,7 +4,13 @@
 
     <transition-group name="list" tag="div" class="box-container">
       <div class="box1" v-for="(box, i) in boxs" :key="i" v-show="i < timing">
-        <img :src="box.imgSrc" class="portfolio-img" alt="포트폴리오 이미지" />
+        <a :href="box.href" target="_blank">
+          <img
+            :src="box.imgSrc"
+            class="portfolio-img"
+            alt="포트폴리오 이미지"
+          />
+        </a>
       </div>
     </transition-group>
   </div>
@@ -19,15 +25,19 @@ export default {
       boxs: [
         {
           imgSrc: require('../../assets/img/portfolio_img1.png'),
+          href: '#',
         },
         {
           imgSrc: require('../../assets/img/portfolio_img1.png'),
+          href: '#',
         },
         {
           imgSrc: require('../../assets/img/portfolio_img1.png'),
+          href: '#',
         },
         {
           imgSrc: require('../../assets/img/portfolio_img1.png'),
+          href: '#',
         },
       ],
     };

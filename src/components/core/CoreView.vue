@@ -9,6 +9,11 @@
 export default {
   name: 'CoreView',
   components: { CoreFooter: () => import('@/components/core/CoreFooter.vue') },
+  methods: {
+    scrollToTop() {
+      document.querySelector('#core-view').scrollTo(0, 0);
+    },
+  },
 };
 </script>
 

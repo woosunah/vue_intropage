@@ -158,6 +158,7 @@ export default {};
   }
   .profile-wrap-wrap {
     position: relative;
+    margin-left: 25px;
   }
   .profile-wrap {
     position: relative;

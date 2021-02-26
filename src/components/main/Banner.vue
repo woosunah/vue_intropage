@@ -142,7 +142,7 @@ export default {
 }
 .intro-txt p {
   color: #fff;
-  font-size: 7.5rem;
+  font-size: 7rem;
   text-align: right;
   font-weight: bold;
   line-height: 1.2;
@@ -150,6 +150,11 @@ export default {
 }
 
 @media only screen and(max-width:1500px) {
+  .intro-txt p {
+    font-size: 5rem;
+  }
+}
+@media only screen and(max-width:767px) {
   .intro-txt p {
     font-size: 3rem;
   }

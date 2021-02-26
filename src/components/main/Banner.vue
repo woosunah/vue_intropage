@@ -1,5 +1,14 @@
 <template>
   <div id="banner">
+    <div class="intro-txt-wrap">
+      <div class="intro-txt">
+        <p>
+          WEB PUBLISHER <br />
+          PORTFOLIO <br />
+          WOO SUN AH
+        </p>
+      </div>
+    </div>
     <canvas id="wave" width="1920" height="500">
       this is canvas
     </canvas>
@@ -128,5 +137,21 @@ export default {
 #wave {
   position: absolute;
   bottom: 0;
+}
+.intro-txt-wrap {
+}
+.intro-txt p {
+  color: #fff;
+  font-size: 7.5rem;
+  text-align: right;
+  font-weight: bold;
+  line-height: 1.2;
+  padding-top: 80px;
+}
+
+@media only screen and(max-width:1500px) {
+  .intro-txt p {
+    font-size: 3rem;
+  }
 }
 </style>

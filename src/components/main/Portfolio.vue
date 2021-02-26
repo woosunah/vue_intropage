@@ -28,8 +28,8 @@ export default {
           href: '#',
         },
         {
-          imgSrc: require('../../assets/img/portfolio_img1.png'),
-          href: '#',
+          imgSrc: require('../../assets/img/evezary_all.png'),
+          href: 'http://ssundesign.dothome.co.kr/evezary',
         },
         {
           imgSrc: require('../../assets/img/portfolio_img1.png'),
@@ -88,11 +88,11 @@ export default {
 }
 .box1 {
   width: 260px;
-  margin: 0 20px 40px;
+  margin-right: 170px;
 }
 .portfolio-img {
-  width: 260px;
-  height: 260px;
+  width: 400px;
+  height: 350px;
 }
 
 @media only screen and(max-width:767px) {

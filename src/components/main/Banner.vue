@@ -138,8 +138,7 @@ export default {
   position: absolute;
   bottom: 0;
 }
-.intro-txt-wrap {
-}
+
 .intro-txt p {
   color: #fff;
   font-size: 7rem;

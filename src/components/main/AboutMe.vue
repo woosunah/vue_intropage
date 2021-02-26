@@ -154,7 +154,7 @@ export default {};
     height: 1400px;
   }
   .circle {
-    margin-top: -90px;
+    margin-top: -60px;
   }
   .profile-wrap-wrap {
     position: relative;

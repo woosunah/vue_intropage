@@ -24,20 +24,20 @@ export default {
       isElAppear: false,
       boxs: [
         {
-          imgSrc: require('../../assets/img/portfolio_img1.png'),
-          href: '#',
+          imgSrc: require('../../assets/img/todolist_all.png'),
+          href: 'https://woosunah.github.io/todolistcopy_redesign/',
         },
         {
           imgSrc: require('../../assets/img/evezary_all.png'),
           href: 'http://ssundesign.dothome.co.kr/evezary',
         },
         {
-          imgSrc: require('../../assets/img/portfolio_img1.png'),
-          href: '#',
+          imgSrc: require('../../assets/img/orange_all.png'),
+          href: 'http://ssundesign.dothome.co.kr/orange',
         },
         {
-          imgSrc: require('../../assets/img/portfolio_img1.png'),
-          href: '#',
+          imgSrc: require('../../assets/img/mini_all.png'),
+          href: 'http://ssundesign.dothome.co.kr/mini',
         },
       ],
     };
@@ -104,11 +104,11 @@ export default {
     left: 75px;
   }
   .box1 {
-    margin: 0 20px 40px;
+    margin: 10px 40px 20px -40px;
   }
   .portfolio-img {
-    width: 260px;
-    height: 260px;
+    width: 350px;
+    height: 300px;
   }
 }
 </style>

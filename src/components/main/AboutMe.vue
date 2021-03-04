@@ -4,7 +4,7 @@
     <div class="circle-wrap-wrap">
       <div class="circle-wrap">
         <div class="circle">
-          <img src="https://picsum.photos/300/300?random" alt="프로필" />
+          <img src="../../assets/img/WooSunAh_Photo.jpg" alt="프로필" />
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
               <span>12.01.03 - 13.05.31 </span>
             </div>
             <div class="right-2">
-              (주)리테일미디어솔루션 이마트 &amp; <br />PB브랜드 코디네이터
+              (주)리테일미디어솔루션 이마트 <br />PB브랜드 코디네이터 근무
             </div>
           </v-row>
         </div>
@@ -91,6 +91,8 @@ export default {};
     transform: translate(-50%, -50%);
 
     img {
+      width: 330px;
+      height: 330px;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -99,9 +101,6 @@ export default {};
     }
   }
 }
-// .profile-wrap-wrap {
-//   position: relative;
-// }
 .profile-wrap {
   width: 600px;
   position: absolute;
